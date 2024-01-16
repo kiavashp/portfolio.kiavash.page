@@ -1,0 +1,20 @@
+source:          ./docs
+destination:     ./.site
+
+collections:
+  projects:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+# global variables
+navtitle: "Kiavash Page"
+sitename: "Kiavash Page"
+sitedescription: "Kiavash Page's Portfolio"
+author: "Kiavash Page"
+contactemail: "contact@kiavash.page"
