@@ -1,0 +1,29 @@
+{% if include.project %}
+
+    {% assign project = include.project %}
+    {% assign id = include.project.slug %}
+    {% assign name = include.project.name %}
+    {% assign category = include.project.category %}
+    {% assign date = include.project.date | date: "%b %Y" %}
+    {% assign summary = include.project.summary %}
+    {% assign content = include.project.content %}
+
+    <article id="{{ id }}" class="project -{{ category }}">
+        <div class="project-date">{{ date }}</div>
+        <h4 class="project-title">{{ name }}</h4>
+        <p class="project-summary">{{ summary }}</p>
+        {{ content }}
+        <div class="project-footer">
+            {% if project.link_project %}
+                {% capture link_name %}{% if project.link_project_name %}{{ project.link_project_name }}{% else %}Project{% endif %}{% endcapture %}
+                <a class="project-footer-link" href="{{ project.link_project }}" target="_blank">View {{ link_name }}</a>
+            {% endif %}
+            {% if project.link_code %}
+                <a class="project-footer-link" href="{{ project.link_code }}" target="_blank">View Code</a>
+            {% endif %}
+        </div>
+    </article>
+
+{% else %}
+<!-- error rendering: include.project is not defined -->
+{% endif %}

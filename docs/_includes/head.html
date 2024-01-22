@@ -1,0 +1,21 @@
+{% capture pagetitle %}{% if page.title %}{{ page.title }} - {% endif %}{{ site.sitename }}{% endcapture %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="{{ site.author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="referrer" content="no-referrer" />
+    <meta property="og:url" content="https://portfolio.kiavash.page/" />
+    <meta property="og:site_name" content="{{ site.sitename }}">
+    <meta property="og:title" content="{{ pagetitle }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/logo-hero.svg">
+    <meta property="og:image:alt" content="{{ site.sitedescription }}">
+    <meta property="og:description" content="{{ site.sitedescription }}">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#34404D">
+    <title>{{ pagetitle }}</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
