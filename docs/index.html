@@ -3,6 +3,7 @@ layout: default
 ---
 
 <script type="application/javascript" src="/js/home.js" defer></script>
+<script type="application/javascript" src="/js/timeline.js" defer></script>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="0" height="0" style="position: absolute; z-index: -9999;">
     <defs>
@@ -25,7 +26,7 @@ layout: default
     </svg>
 </header>
 
-<main>
+<main id="content">
     <nav id="project-filters">
         <label class="project-filter-item -all" for="project-filter-all">
             <input id="project-filter-all" type="radio" name="project-filter" value="all" autocomplete="off" checked/>
@@ -47,6 +48,7 @@ layout: default
             <div class="project-dot -{{ project.category }}" data-project-id="{{ project.slug }}" data-project-name="{{ project.name | escape }}"></div>
         {% endfor %}
         <div class="dot-end"></div>
+        <div id="timeline-scroll-indicator"></div>
     </aside>
 
     <section id="projects">

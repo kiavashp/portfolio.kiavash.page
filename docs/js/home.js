@@ -1,16 +1,3 @@
-// timeline - click to scroll
-const timeline = document.getElementById('timeline');
-
-timeline.addEventListener('click', (event) => {
-    if (event.target.classList.contains('project-dot')) {
-        const projectId = event.target.getAttribute('data-project-id');
-        const project = document.getElementById(projectId);
-
-        project.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
-    }
-});
-
-
 // nav - project filters
 const filterItems = document.getElementsByClassName('project-filter-item');
 
