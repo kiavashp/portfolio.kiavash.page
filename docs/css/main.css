@@ -116,12 +116,24 @@ header {
 }
 
 #header-logo .logo-body {
-    fill: var(--color-theme-highlight);
+    fill: url(#theme-gradient);
 }
 
 #header-logo .logo-shadow {
     fill: #000000;
     opacity: 0.1;
+}
+
+.header-blurb {
+    padding: 24px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.65);
+    mix-blend-mode: darken;
+    text-align: center;
+}
+
+.header-blurb-line .-large {
+    font-weight: 500;
 }
 
 
@@ -292,7 +304,7 @@ nav#project-filters {
 }
 
 .project-filter-item.-all {
-    --local-dot-color: linear-gradient(-45deg, var(--color-theme-code) 20%, var(--color-theme-design) 80%);
+    --local-dot-color: linear-gradient(-135deg, var(--color-theme-code) 20%, var(--color-theme-design) 80%);
 }
 
 .project-filter-item.-code {
@@ -398,17 +410,17 @@ nav#project-filters {
     0px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
-body:not([data-filter="design"]) .project-dot.-code {
+.project-dot.-code {
     --local-color: var(--color-theme-code);
 }
 
-body:not([data-filter="code"]) .project-dot.-design {
+.project-dot.-design {
     --local-color: var(--color-theme-design);
 }
 
-body[data-filter="design"] .project-dot.-code:after,
-body[data-filter="code"] .project-dot.-design:after {
-    content: unset;
+body:not([data-filter="all"]):not([data-filter="code"]) .project-dot.-code,
+body:not([data-filter="all"]):not([data-filter="design"]) .project-dot.-design{
+    display: none;
 }
 
 
