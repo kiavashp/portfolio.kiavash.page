@@ -1,3 +1,19 @@
+// timeline - filters
+const filterItems = document.getElementsByClassName('project-filter-item');
+
+for (const item of filterItems) {
+    const input = item.querySelector('input');
+    if (input.checked) {
+        document.body.setAttribute('data-filter', input.value);
+    }
+
+    item.addEventListener('change', function (event) {
+        const filter = event.target.value;
+        document.body.setAttribute('data-filter', filter);
+        updateScrollIndicator();
+    });
+}
+
 // timeline - click to scroll
 const timeline = document.getElementById('timeline');
 
@@ -59,9 +75,10 @@ const updateScrollIndicator = () => {
         lastIndicatorPos.height = indicatorHeight;
         scrollIndicator.style.setProperty('--local-top', `${indicatorTop}px`);
         scrollIndicator.style.setProperty('--local-height', `${indicatorHeight}px`);
+        scrollIndicator.style.removeProperty('display');
     }
 };
 
 window.addEventListener('scroll', updateScrollIndicator, {capture: true, passive: true});
 window.addEventListener('resize', updateScrollIndicator, {capture: true, passive: true});
-updateScrollIndicator();
+window.addEventListener('load', updateScrollIndicator);

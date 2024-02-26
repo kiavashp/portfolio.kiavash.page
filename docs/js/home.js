@@ -1,19 +1,3 @@
-// nav - project filters
-const filterItems = document.getElementsByClassName('project-filter-item');
-
-for (const item of filterItems) {
-    const input = item.querySelector('input');
-    if (input.checked) {
-        document.body.setAttribute('data-filter', input.value);
-    }
-
-    item.addEventListener('change', function (event) {
-        const filter = event.target.value;
-        document.body.setAttribute('data-filter', filter);
-    });
-}
-
-
 // projects - image-viewer
 const projects = document.getElementById('projects');
 const imageViewer = document.getElementById('image-viewer');
